@@ -1,0 +1,55 @@
+<view class="container"> 
+ 
+
+ <view class="login-from"> 
+  <text>用户信息</text>
+ <!--账号-->
+ <view class="inputView"> 
+  
+  <label class="loginLab">账号</label> 
+  <input class="inputText" placeholder="请输入账号" value="{{username}}" data-label="name" disabled="true"/> 
+ </view> 
+ <view class="line"></view> 
+ 
+ <!--密码-->
+ <!-- <view class="inputView"> 
+  
+  <label class="loginLab">密码</label> 
+  <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" /> 
+ </view>  -->
+ <view>
+  <view class="inputView"> 
+  
+  <label class="loginLab">年龄</label> 
+  <input class="inputText"  placeholder="请输入" bindinput="Input"  data-label="age" value="{{user.age}}"/> 
+ </view> 
+ <view class="inputView"> 
+  
+  <label class="loginLab">性别</label> 
+  <input class="inputText"  placeholder="请输入" bindinput="Input" data-label="gender"  value="{{user.gender}}"/> 
+ </view> 
+ <view class="inputView"> 
+  
+  <label class="loginLab">电子邮件</label> 
+  <input class="inputText"  placeholder="请输入" bindinput="Input" data-label="email"  value="{{user.email}}" /> 
+ </view> 
+ <view class="inputView"> 
+  
+  <label class="loginLab">学历</label> 
+  <input class="inputText"  placeholder="请输入" bindinput="Input"  data-label="education" value="{{user.education}}"/> 
+ </view> 
+ <view class="inputView"> 
+  
+  <label class="loginLab">兴趣</label> 
+  <input class="inputText"  placeholder="请输入" bindinput="Input" data-label="interesting"  value="{{user.interesting}}"/> 
+ </view> 
+ </view>
+ 
+ <!--按钮-->
+ <view class="loginBtnView"> 
+   
+  <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="doSave">保存</button> 
+ </view> 
+
+ </view> 
+</view>

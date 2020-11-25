@@ -1,0 +1,58 @@
+
+
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <!-- 搜索框 -->
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="请输入搜索内容" bindinput="input" />
+      </view>
+    </view>
+    <!-- 搜索按钮,调用搜索查询方法 -->
+    <view wx:if="{{!searching}}" class="weui-search-bar__cancel-btn" bindtap='search'>搜索</view>
+
+    <!-- 取消搜索 -->
+    <view wx:else class="weui-search-bar__cancel-btn" bindtap='hideInput'>取消</view>
+
+  </view>
+
+
+  <scroll-view class="content-playlist" scroll-y>
+    <view class="playlist-item" wx:for="{{playlist}}" wx:key="id" bindtap="change" data-index="{{index}}">
+      <image class="playlist-cover" src="{{item.coverImgUrl}}" />
+      <view class="playlist-info">
+        <view class="playlist-info-title">{{item.title}}</view>
+        <view class="playlist-info-singer">{{item.singer}}</view>
+      </view>
+      <view class="playlist-controls">
+        <text wx:if="{{index==playIndex}}">正在播放</text>
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="content-play-progress">
+    <text>{{play.currentTime}}</text>
+    <view>
+      <slider bindchange="sliderChange" activeColor="#d33a31" block-size="12" backgroundColor="#dadada"
+        value="{{play.percent}}" />
+    </view>
+    <text>{{play.duration}}</text>
+  </view>
+
+  <view class="player">
+    <image class="player-cover" src="{{play.coverImgUrl}}" />
+    <view class="player-info">
+      <view class="player-info-title">{{play.title}}</view>
+      <view class="player-info-singer">{{play.singer}}</view>
+    </view>
+
+    <view class="player-con">
+      <image src="/images/01.png" />
+      <image wx:if="{{state=='paused'}}" src="/images/02.png" bindtap="play" />
+      <image wx:else src="/images/02stop.png" bindtap="pause" />
+      <image src="/images/03.png" bindtap="next" />
+    </view>
+  </view>
+
+
+

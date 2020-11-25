@@ -1,0 +1,27 @@
+<view class="playing">
+  <image class="playing-cover" src="{{play.coverImgUrl}}" />
+  <view class="playing-info">
+    <view class="playing-info-title">{{play.title}}</view>
+    <view class="playing-info-singer">{{play.singer}}</view>
+  </view>
+
+  <view class="content-play-progress">
+ <text>{{play.currentTime}}</text>
+ <view>
+   <slider bindchange="sliderChange" activeColor="#d33a31" block-size="12" backgroundColor="#dadada" value="{{play.percent}}" />
+ </view>
+ <text>{{play.duration}}</text>
+</view>
+
+  <view class="playing-con">
+    <image src="/images/01.png" />
+    <image wx:if="{{state=='paused'}}" src="/images/02.png" bindtap="play" />
+    <image wx:else src="/images/02stop.png" bindtap="pause"  />
+    <image src="/images/03.png" bindtap="next" />
+    <image wx:if="{{!play.favor}}" src="/images/disfavor.png" bindtap="favor" />
+    <image wx:else src="/images/favor.png" bindtap="disfavor" />
+  </view>
+
+  
+</view>
+

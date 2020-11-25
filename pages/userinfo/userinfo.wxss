@@ -1,0 +1,41 @@
+/* pages/userinfo.wxss */
+page{
+  display: flex;
+  flex-direction: column;
+  background-color: #ecebeb;
+}
+.headimg{
+  display: flex;
+  padding-top: 30px;
+  background-color: #ff6d00; 
+}
+.headimg .useravatar{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.headimg>button{
+  margin-top: 20px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.list{
+  height: 50px;
+  background-color: white;
+  font-size: large;
+  line-height: 50px;
+  margin-bottom: 2px;
+}
+.more{
+  float: right;
+}

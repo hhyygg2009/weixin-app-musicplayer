@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/userinfo/userinfo",
+    "pages/userinfo/changeinfo/changeinfo",
+    "pages/index/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "音乐播放器",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/bar/cinema-0.jpg",
+        "selectedIconPath": "images/bar/cinema-1.jpg"
+      },
+      {
+        "pagePath": "pages/userinfo/userinfo",
+        "text": "个人中心",
+        "iconPath": "images/bar/me-0.jpg",
+        "selectedIconPath": "images/bar/me-1.jpg"
+      }
+    ]
+  }
+}

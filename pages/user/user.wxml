@@ -1,0 +1,18 @@
+<view class="tab">
+  <view class="{{currentTab==0?'select':'default'}}" data-current='0' bindtap="changeTab">登录</view>
+  <view class="{{currentTab==1?'select':'default'}}" data-current='1' bindtap="changeTab">注册</view>
+  
+
+</view>
+
+<view class="content">
+  <swiper current="{{currentTab}}" bindchange="changeSwiperItem">
+    <swiper-item>
+      <include src="login.wxml" />
+    </swiper-item>
+    <swiper-item>
+      <include src="register.wxml" />
+    </swiper-item>
+    
+  </swiper>
+</view>

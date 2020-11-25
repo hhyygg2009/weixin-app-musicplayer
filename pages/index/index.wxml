@@ -1,0 +1,25 @@
+<view class="tab">
+  <view class="{{currentTab==0?'select':'default'}}" data-current='0' bindtap="changeTab">音乐推荐</view>
+  <view class="{{currentTab==1?'select':'default'}}" data-current='1' bindtap="changeTab">播放器</view>
+  <view class="{{currentTab==2?'select':'default'}}" data-current='2' bindtap="changeTab">播放列表</view>
+  <view class="{{currentTab==3?'select':'default'}}" data-current='3' bindtap="changeTab">我的音乐</view>
+
+</view>
+
+<view class="content">
+  <swiper current="{{currentTab}}" bindchange="changeSwiperItem">
+    <swiper-item>
+      <include src="recommend.wxml" />
+    </swiper-item>
+    <swiper-item>
+      <include src="player.wxml" />
+    </swiper-item>
+    <swiper-item>
+      <include src="playlist.wxml" />
+    </swiper-item>
+    <swiper-item>
+      <include src="user.wxml" />
+
+    </swiper-item>
+  </swiper>
+</view>

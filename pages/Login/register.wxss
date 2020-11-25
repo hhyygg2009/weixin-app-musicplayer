@@ -1,0 +1,2 @@
+/* pages/Login/register.wxss */
+@import "./Login.wxss"

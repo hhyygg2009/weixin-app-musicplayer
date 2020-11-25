@@ -1,0 +1,51 @@
+<!--pages/userinfo.wxml-->
+
+<scroll-view class="mymusic" scroll-y>
+  <view class="headimg" wx:if="{{isLogined}}">
+    <!-- <image src="{{src}}"></image> -->
+    <view class="useravatar">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <text>{{username}}，欢迎</text>
+  </view>
+  <button bindtap="login" wx:if="{{!isLogined}}">点击登录</button>
+
+  <view class="content">
+
+    <view class="list">
+      <text>最近播放</text>
+      <text class="more">></text>
+    </view>
+
+    <view class="playlist-item" wx:for="{{recentPlay}}" wx:key="id" bindtap="change" data-index="{{index}}">
+      <image class="playlist-cover" src="{{playlist[item].coverImgUrl}}" />
+      <!-- <image class="playlist-cover" src="{{item.coverImgUrl}}" />{{item}} -->
+      <view class="playlist-info">
+        <view class="playlist-info-title">{{playlist[item].title}}</view>
+        <view class="playlist-info-singer">{{playlist[item].singer}}</view>
+      </view>
+      <view class="playlist-controls">
+        <text wx:if="{{index==playIndex}}">正在播放</text>
+      </view>
+    </view>
+
+    <view class="list" bindtap="checkLogin">
+      <text>收藏</text>
+      <text class="more">></text>
+
+    </view>
+
+    <view class="playlist-item" wx:for="{{favor}}" wx:key="id" bindtap="change" data-index="{{index}}">
+      <image class="playlist-cover" src="{{playlist[item].coverImgUrl}}" />
+      <!-- <image class="playlist-cover" src="{{item.coverImgUrl}}" />{{item}} -->
+      <view class="playlist-info">
+        <view class="playlist-info-title">{{playlist[item].title}}</view>
+        <view class="playlist-info-singer">{{playlist[item].singer}}</view>
+      </view>
+      <view class="playlist-controls">
+        <text wx:if="{{index==playIndex}}">正在播放</text>
+      </view>
+    </view>
+
+  </view>
+</scroll-view>
