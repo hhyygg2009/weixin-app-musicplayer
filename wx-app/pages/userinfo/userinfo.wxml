@@ -1,14 +1,13 @@
 <!--pages/userinfo.wxml-->
 
-<view class="headimg" wx:if="{{isLogined}}">
-<!-- <image src="{{src}}"></image> -->
+<view class="headimg">
 <view class="useravatar">
   <open-data type="userAvatarUrl"></open-data>
 </view>
-<text>{{username}}，欢迎</text>
-
+<text class="username-text" wx:if="{{isLogined}}">欢迎{{username}}，早上好啊！</text>
+<text class="username-text" wx:if="{{!isLogined}}" bindtap="login">点击这里登录</text>
 </view>
-<button bindtap="login" wx:if="{{!isLogined}}">点击登录</button>
+
 
 <view class="content">
 <view class="list" bindtap="changeInfo">
@@ -17,10 +16,10 @@
 
 </view>
 
-<!-- <view class="list">
+<view class="list"  bindtap="showAbout">
   <text>关于本程序</text>
   <text class="more">></text>
-</view> -->
+</view>
 
 
 </view>

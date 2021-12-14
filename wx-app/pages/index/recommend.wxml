@@ -1,5 +1,5 @@
 <swiper class="recommandcover" autoplay="true">
-  <block wx:for="{{playlist}}" >
+  <block wx:for="{{playlist}}" wx:key="key" >
     <swiper-item>
       <image src="{{item.coverImgUrl}}" />
     </swiper-item>

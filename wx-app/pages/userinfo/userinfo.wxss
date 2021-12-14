@@ -7,7 +7,7 @@ page{
 .headimg{
   display: flex;
   padding-top: 30px;
-  background-color: #ff6d00; 
+  background-color: #17181a; 
 }
 .headimg .useravatar{
   width: 80px;
@@ -38,4 +38,10 @@ page{
 }
 .more{
   float: right;
+}
+
+.username-text{
+  margin: 20px;
+  font-size: larger;
+  color: white;
 }

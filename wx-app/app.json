@@ -8,9 +8,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "音乐播放器",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#17181a",
+    "navigationBarTextStyle":"white"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
