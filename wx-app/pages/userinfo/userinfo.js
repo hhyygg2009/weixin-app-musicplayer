@@ -1,5 +1,5 @@
 // pages/userinfo.js
-const app=getApp()
+const app = getApp()
 Page({
 
   /**
@@ -27,9 +27,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-      this.setData({
-        src:app.globalData.src
-      })
+    this.setData({
+      src: app.globalData.src
+    })
   },
 
   /**
@@ -67,8 +67,8 @@ Page({
 
   },
 
-  checkLogin:function(e){
-    if(!this.data.isLogined){
+  checkLogin: function (e) {
+    if (!this.data.isLogined) {
       wx.showToast({
         title: '请登录以使用更多功能',
         icon: 'none',
@@ -78,43 +78,44 @@ Page({
     }
     return true;
   },
-  changeInfo:function(e){
-    if(this.checkLogin()){
+  changeInfo: function (e) {
+    if (this.checkLogin()) {
       wx.navigateTo({
         url: './changeinfo/changeinfo',
       })
-  
+
     }
   },
-  login:function(e){
+  login: function (e) {
     wx.navigateTo({
       url: '../user/user',
     })
-  },  
-  onShow:function(e){
-    var that=this;
+  },
+  onShow: function (e) {
+    var that = this;
     wx.getStorage({
       key: 'username',
-      success:function(res){
+      success: function (res) {
         console.log(res)
         that.setData({
-          isLogined:true,
-          username:res.data
+          isLogined: true,
+          username: res.data
         })
-    }})
-  },
-  showAbout:function(e){
-    wx.showModal({
-      title:"关于本程序",
-      content:"作者：hhyygg2009",
-      success (res) {
-      if (res.confirm) {
-      console.log('用户点击确定')
-      } else if (res.cancel) {
-      console.log('用户点击取消')
       }
-    }
-  })
+    })
+  },
+  showAbout: function (e) {
+    wx.showModal({
+      title: "关于本程序",
+      content: "作者：hhyygg2009",
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   }
-    
+
 })

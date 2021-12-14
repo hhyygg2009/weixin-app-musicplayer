@@ -1,3 +1,12 @@
+/*
+ * @Author: hhyygg2009
+ * @Date: 2020-10-15 23:06:23
+ * @LastEditTime: 2021-12-14 18:59:02
+ * @LastEditors: hhyygg2009
+ * @Description: 
+ * @FilePath: \wx-app\pages\index\player.wxml
+ * 你所热爱的，就是你的生活
+ */
 <view class="playing">
   <image class="playing-cover" src="{{play.coverImgUrl}}" />
   <view class="playing-info">

@@ -1,15 +1,17 @@
 /* pages/userinfo.wxss */
-page{
+page {
   display: flex;
   flex-direction: column;
   background-color: #ecebeb;
 }
-.headimg{
+
+.headimg {
   display: flex;
   padding-top: 30px;
-  background-color: #17181a; 
+  background-color: #17181a;
 }
-.headimg .useravatar{
+
+.headimg .useravatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -18,29 +20,33 @@ page{
   margin-bottom: 20px;
   overflow: hidden;
 }
-.headimg>button{
+
+.headimg>button {
   margin-top: 20px;
   height: 40px;
   text-align: center;
   line-height: 40px;
 }
-.content{
+
+.content {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
-.list{
+
+.list {
   height: 50px;
   background-color: white;
   font-size: large;
   line-height: 50px;
   margin-bottom: 2px;
 }
-.more{
+
+.more {
   float: right;
 }
 
-.username-text{
+.username-text {
   margin: 20px;
   font-size: larger;
   color: white;

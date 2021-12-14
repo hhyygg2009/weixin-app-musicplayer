@@ -1,11 +1,12 @@
-page{
+page {
   display: flex;
   flex-direction: column;
   background-color: #17181a;
   height: 100%;
   color: aquamarine;
 }
-.tab{
+
+.tab {
   height: 72rpx;
   display: flex;
   text-align: center;
@@ -14,57 +15,66 @@ page{
   font-size: 10pt;
 
 }
-.content{
+
+.content {
   flex: 1;
 }
-.content>swiper{
+
+.content>swiper {
   height: 100%;
 
 }
-.select{
+
+.select {
   flex: 1;
   color: #c25b5b;
 }
-.default{
-  flex:1;
+
+.default {
+  flex: 1;
   color: #fff;
 }
 
 /* 播放列表 */
-.content-playlist{
+.content-playlist {
   height: 70%;
 }
-.playlist-item{
+
+.playlist-item {
   display: flex;
   align-items: center;
   border-bottom: 1rpx solid #333;
   height: 112rpx;
 }
-.playlist-cover{
+
+.playlist-cover {
   width: 80rpx;
   height: 80rpx;
   margin-left: 15rpx;
   border-radius: 8rpx;
   border: 1px solid #333;
 }
-.playlist-info{
+
+.playlist-info {
   flex: 1;
   font-size: 10pt;
   line-height: 38rpx;
   margin-left: 20rpx;
   padding-bottom: 8rpx;
 }
-.playlist-info-singer{
+
+.playlist-info-singer {
   color: #888;
 }
-.playlist-controls{
+
+.playlist-controls {
   font-size: 10pt;
   margin-right: 20rpx;
   color: #c25b5b;
 }
 
 
-.content-play-progress{
+.content-play-progress {
   display: flex;
   align-items: center;
   /* margin: 0 50rpx; */
@@ -72,43 +82,49 @@ page{
   text-align: center;
   width: 100%;
 }
-.content-play-progress>view{
+
+.content-play-progress>view {
   flex: 1;
 }
 
-.player{
+.player {
   display: flex;
   align-items: center;
   background-color: #222;
   border-top: 1px solid #252525;
   height: 112rpx;
 }
-.player-cover{
+
+.player-cover {
   width: 80rpx;
   height: 80rpx;
   margin-left: 15rpx;
   border-radius: 8rpx;
   border: 1px solid #333;
 }
-.player-info{
-  flex:1;
+
+.player-info {
+  flex: 1;
   font-size: 10pt;
   line-height: 38rpx;
   margin-left: 20rpx;
   padding-bottom: 8rpx;
   color: #fff;
 }
-.player-info-singer{
+
+.player-info-singer {
   color: #888;
 }
+
 .player-con image {
   width: 80rpx;
   height: 80rpx;
   margin-right: 15rpx;
 }
+
 /* 播放器页面 */
 
-.playing{
+.playing {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,14 +133,16 @@ page{
   border-top: 1px solid #252525;
   height: 100%;
 }
-.playing-cover{
+
+.playing-cover {
   width: 400rpx;
   height: 400rpx;
   margin-left: 15rpx;
   border-radius: 8rpx;
   border: 1px solid #333;
 }
-.playing-info{
+
+.playing-info {
   /* flex:1; */
   font-size: 10pt;
   line-height: 38rpx;
@@ -132,35 +150,38 @@ page{
   padding-bottom: 8rpx;
   color: #fff;
 }
-.playing-info-singer{
+
+.playing-info-singer {
   color: #888;
 }
+
 .playing-con image {
   width: 80rpx;
   height: 80rpx;
   margin-right: 15rpx;
 }
 
-.recommandcover{
+.recommandcover {
   height: 400rpx;
   flex: 1;
   align-items: center;
   justify-content: center;
 }
 
-.recommandcover image{
+.recommandcover image {
   height: 100%;
   width: 100%;
 }
 
 /* 个人首页 */
 
-.headimg{
+.headimg {
   display: flex;
   padding-top: 30px;
   /* background-color: #ff6d00;  */
 }
-.headimg .useravatar{
+
+.headimg .useravatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -169,34 +190,38 @@ page{
   margin-bottom: 20px;
   overflow: hidden;
 }
-.headimg>button{
+
+.headimg>button {
   margin-top: 20px;
   height: 40px;
   text-align: center;
   line-height: 40px;
 }
-.headimg>text{
+
+.headimg>text {
   margin-left: 30rpx;
 }
 
-.content{
+.content {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
 }
-.list{
+
+.list {
   height: 50px;
   /* background-color: white; */
   font-size: large;
   line-height: 50px;
   margin-bottom: 2px;
 }
-.more{
+
+.more {
   float: right;
 }
 
 /* 我的音乐 */
-.mymusic{
+.mymusic {
   height: 100%;
   flex-direction: column-reverse;
 }
@@ -215,20 +240,23 @@ page{
   border-bottom: 1rpx solid #D7D6DC; */
   width: 100%;
 }
+
 .weui-icon-search_in-box {
   position: absolute;
   left: 10px;
   top: 7px;
 }
+
 .weui-search-bar__form {
   position: relative;
   -webkit-box-flex: 1;
   -webkit-flex: auto;
-          flex: auto;
+  flex: auto;
   border-radius: 5px;
   background: #FFFFFF;
   border: 1rpx solid #E6E6EA;
 }
+
 .weui-search-bar__box {
   position: relative;
   padding-left: 30px;
@@ -237,11 +265,13 @@ page{
   box-sizing: border-box;
   z-index: 1;
 }
+
 .weui-search-bar__input {
   height: 28px;
   line-height: 28px;
   font-size: 14px;
 }
+
 .weui-search-bar__cancel-btn {
   margin-left: 10px;
   line-height: 28px;

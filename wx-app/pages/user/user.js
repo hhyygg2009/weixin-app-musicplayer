@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
- 
+
 Page({
   data: {
     username: '',
@@ -9,7 +9,7 @@ Page({
     rpassword: '',
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
@@ -19,17 +19,17 @@ Page({
     // wx.hideTabBar({})
   },
   onLoad: function () {
-   
+
   },
- 
- 
+
+
   // 获取输入账号 
   usernameInput: function (e) {
     this.setData({
       username: e.detail.value
     })
   },
- 
+
   // 获取输入密码 
   passwordInput: function (e) {
     this.setData({
@@ -41,7 +41,7 @@ Page({
       rpassword: e.detail.value
     })
   },
- 
+
   // 登录处理
   doLogin: function () {
     var that = this;
@@ -53,7 +53,7 @@ Page({
       })
     } else {
       wx.request({
-        url: app.globalData.globalReqUrl +'DoLogin', // 仅为示例，并非真实的接口地址
+        url: app.globalData.globalReqUrl + 'DoLogin', // 仅为示例，并非真实的接口地址
         method: 'post',
         data: {
           username: that.data.username,
@@ -74,11 +74,11 @@ Page({
             })
             wx.switchTab({
               url: '../index/index',
-              fail:function(e){
+              fail: function (e) {
                 console.log(e)
               }
             })
-          } else {            
+          } else {
             wx.showToast({
               title: res.data.errmsg,
               icon: 'none',
@@ -89,7 +89,7 @@ Page({
       })
     }
   },
-  doRegister:function(){
+  doRegister: function () {
     var that = this;
     if (this.data.username.length == 0 || this.data.password.length == 0) {
       wx.showToast({
@@ -97,16 +97,16 @@ Page({
         icon: 'none',
         duration: 2000
       })
-    }else     if (this.data.password!=this.data.rpassword) {
+    } else if (this.data.password != this.data.rpassword) {
       wx.showToast({
         title: '密码、确认密码不一致',
         icon: 'none',
         duration: 2000
-      }) 
-    
-    }else {
+      })
+
+    } else {
       wx.request({
-        url: app.globalData.globalReqUrl +'DoRegister', // 仅为示例，并非真实的接口地址
+        url: app.globalData.globalReqUrl + 'DoRegister', // 仅为示例，并非真实的接口地址
         method: 'post',
         data: {
           username: that.data.username,
@@ -126,9 +126,9 @@ Page({
               duration: 2000
             })
             that.setData({
-              currentTab:0
+              currentTab: 0
             })
-          } else {            
+          } else {
             wx.showToast({
               title: res.data.errmsg,
               icon: 'none',
@@ -141,15 +141,14 @@ Page({
 
   },
 
-  changeTab:function(e){
+  changeTab: function (e) {
     this.setData({
-      currentTab:e.target.dataset.current
+      currentTab: e.target.dataset.current
     })
   },
-  changeSwiperItem:function(e){
+  changeSwiperItem: function (e) {
     this.setData({
-      currentTab:e.detail.current
+      currentTab: e.detail.current
     })
   },
 })
- 

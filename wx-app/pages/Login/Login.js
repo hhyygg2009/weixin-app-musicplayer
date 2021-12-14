@@ -1,14 +1,14 @@
 //index.js
 //获取应用实例
 const app = getApp()
- 
+
 Page({
   data: {
     username: '',
     password: '',
   },
   //事件处理函数
-  bindViewTap: function() {
+  bindViewTap: function () {
     wx.navigateTo({
       url: '../logs/logs'
     })
@@ -18,24 +18,24 @@ Page({
     // wx.hideTabBar({})
   },
   onLoad: function () {
-   
+
   },
- 
- 
+
+
   // 获取输入账号 
   usernameInput: function (e) {
     this.setData({
       username: e.detail.value
     })
   },
- 
+
   // 获取输入密码 
   passwordInput: function (e) {
     this.setData({
       password: e.detail.value
     })
   },
- 
+
   // 登录处理
   doLogin: function () {
     var that = this;
@@ -47,7 +47,7 @@ Page({
       })
     } else {
       wx.request({
-        url: app.globalData.globalReqUrl +'DoLogin', 
+        url: app.globalData.globalReqUrl + 'DoLogin',
         method: 'post',
         data: {
           username: that.data.username,
@@ -69,17 +69,17 @@ Page({
               duration: 2000
             })
             app.setData({
-              isLogined:true
+              isLogined: true
             })
             wx.switchTab({
               url: '../index/index',
-              fail:function(e){
+              fail: function (e) {
                 console.log(e)
               }
             })
 
 
-          } else {            
+          } else {
             wx.showToast({
               title: res.data.errmsg,
               icon: 'none',
@@ -91,4 +91,3 @@ Page({
     }
   }
 })
- 

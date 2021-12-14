@@ -1,3 +1,12 @@
+/*
+ * @Author: hhyygg2009
+ * @Date: 2020-11-22 13:21:21
+ * @LastEditTime: 2021-12-14 18:59:04
+ * @LastEditors: hhyygg2009
+ * @Description: 
+ * @FilePath: \wx-app\pages\index\search\search.js
+ * 你所热爱的，就是你的生活
+ */
 // pages/index/search/search.js
 const app = getApp()
 Page({
@@ -14,9 +23,9 @@ Page({
    */
   onLoad: function (options) {
     // console.log(options)
-      this.setData({        
-        search:options
-      })
+    this.setData({
+      search: options
+    })
   },
 
   /**
@@ -32,9 +41,9 @@ Page({
   onShow: function () {
     var that = this;
     wx.request({
-      url: app.globalData.globalReqUrl+'getMusic',
-      data:{
-          search:this.data.search
+      url: app.globalData.globalReqUrl + 'getMusic',
+      data: {
+        search: this.data.search
       },
       success: function (res) {
         // console.log(res)

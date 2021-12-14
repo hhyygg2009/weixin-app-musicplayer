@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    username:'',
+    username: '',
 
 
   },
@@ -15,35 +15,36 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this;
+    var that = this;
     wx.getStorage({
       key: 'username',
-      success:function(res){
+      success: function (res) {
         // console.log(res)
         that.setData({
-          isLogined:true,
-          username:res.data
+          isLogined: true,
+          username: res.data
         })
         // console.log(that.data.username)
 
         wx.request({
-          url: app.globalData.globalReqUrl +'user',
-          data:{
-            username:that.data.username,
+          url: app.globalData.globalReqUrl + 'user',
+          data: {
+            username: that.data.username,
           },
-          success:function(res){
-            
-              that.setData({
-                'user.age':res.data.age,
-                'user.gender':res.data.gender,
-                'user.email':res.data.email,
-                'user.education':res.data.education,
-                'user.interesting':res.data.interesting
-              })
-    
+          success: function (res) {
+
+            that.setData({
+              'user.age': res.data.age,
+              'user.gender': res.data.gender,
+              'user.email': res.data.email,
+              'user.education': res.data.education,
+              'user.interesting': res.data.interesting
+            })
+
           }
         })
-    }})
+      }
+    })
 
 
   },
@@ -58,8 +59,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  
-  onShow:function(e){
+
+  onShow: function (e) {
 
   },
 
@@ -97,22 +98,22 @@ Page({
   onShareAppMessage: function () {
 
   },
-  doSave(){
-    var that=this
+  doSave() {
+    var that = this
     console.log(that.data.user)
     wx.request({
-      url: app.globalData.globalReqUrl +'user',
-      data:{        
-        username:that.data.username,
-        
-        age:that.data.user.age,
-        gender:that.data.user.gender,
-        email:that.data.user.email,
-        education:that.data.user.education,
-        interesting:that.data.user.interesting,
-        set:true
+      url: app.globalData.globalReqUrl + 'user',
+      data: {
+        username: that.data.username,
+
+        age: that.data.user.age,
+        gender: that.data.user.gender,
+        email: that.data.user.email,
+        education: that.data.user.education,
+        interesting: that.data.user.interesting,
+        set: true
       },
-      success:function(res){
+      success: function (res) {
         console.log(that.data.user.age)
         console.log(res)
         wx.showToast({
@@ -123,11 +124,11 @@ Page({
       }
     })
   },
-  Input:function(e){
+  Input: function (e) {
     // console.log(e.currentTarget.dataset.label)
-    let label='user.'+e.currentTarget.dataset.label
+    let label = 'user.' + e.currentTarget.dataset.label
     this.setData({
-      [label]:e.detail.value
+      [label]: e.detail.value
     })
   }
 })

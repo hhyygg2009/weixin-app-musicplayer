@@ -11,7 +11,7 @@ Page({
     username: '',
     recentPlay: [],
     favor: [],
-    searching:false,
+    searching: false,
     play: {
       currentTime: '00:00',
       duration: '00:00',
@@ -51,7 +51,7 @@ Page({
   onLoad: function () {
     var that = this;
     wx.request({
-      url: app.globalData.globalReqUrl+'getMusic',
+      url: app.globalData.globalReqUrl + 'getMusic',
       success: function (res) {
         // console.log(res)
         that.setData({
@@ -140,12 +140,12 @@ Page({
       recent.shift()
     }
     var i = recent.indexOf(index)
-    if (i > -1&&recent.length>0) {
+    if (i > -1 && recent.length > 0) {
       recent.splice(i, 1)
     }
     recent.push(index);
-    var music ={}
-    if(this.data.playlist){
+    var music = {}
+    if (this.data.playlist) {
       music = this.data.playlist[index]
       this.audioCtx.src = music.src
     }
@@ -247,7 +247,7 @@ Page({
 
         if (that.data.username != "") {
           wx.request({
-            url: app.globalData.globalReqUrl+'getFavor',
+            url: app.globalData.globalReqUrl + 'getFavor',
             data: {
               'userid': that.data.username
             },
@@ -265,27 +265,28 @@ Page({
   },
   setFavor: function (insert) {
     if (this.checkLogin()) {
-    var that = this;
-    if (that.data.username != "") {
-      wx.request({
-        url: app.globalData.globalReqUrl+'favor',
-        data: {
-          'userid': that.data.username,
-          'songid': that.data.playIndex,
-          'insert': insert
-        },
-        success: function (res) {
-          console.log(res)
-          that.setData({
-            favor: res.data
-          })
-        }
-      })
-    }}
+      var that = this;
+      if (that.data.username != "") {
+        wx.request({
+          url: app.globalData.globalReqUrl + 'favor',
+          data: {
+            'userid': that.data.username,
+            'songid': that.data.playIndex,
+            'insert': insert
+          },
+          success: function (res) {
+            console.log(res)
+            that.setData({
+              favor: res.data
+            })
+          }
+        })
+      }
+    }
   },
 
   favor: function () {
-    
+
     this.setData({
       'play.favor': true
     })
@@ -297,38 +298,38 @@ Page({
     })
     this.setFavor(false);
   },
-  search:function(e){
+  search: function (e) {
     // wx.navigateTo({
     //   url: './search/search?search='+this.data.search,
     // })
     var that = this;
     console.log(that.data.search)
     wx.request({
-      url: app.globalData.globalReqUrl+'getMusic',
-      data:{
-          title:that.data.search
+      url: app.globalData.globalReqUrl + 'getMusic',
+      data: {
+        title: that.data.search
       },
       success: function (res) {
         console.log(res)
         that.setData({
           playlist: res.data,
-          searching:true
+          searching: true
         })
       }
     })
   },
-  input:function(e){
+  input: function (e) {
     this.setData({
-      search:e.detail.value
+      search: e.detail.value
     })
   },
-  hideInput:function(e){
-    var that=this
+  hideInput: function (e) {
+    var that = this
     this.setData({
-      searching:false
+      searching: false
     })
     wx.request({
-      url: app.globalData.globalReqUrl+'getMusic',
+      url: app.globalData.globalReqUrl + 'getMusic',
       success: function (res) {
         // console.log(res)
         that.setData({
