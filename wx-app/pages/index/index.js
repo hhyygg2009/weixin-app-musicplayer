@@ -144,8 +144,11 @@ Page({
       recent.splice(i, 1)
     }
     recent.push(index);
-    var music = this.data.playlist[index]
-    this.audioCtx.src = music.src
+    var music ={}
+    if(this.data.playlist){
+      music = this.data.playlist[index]
+      this.audioCtx.src = music.src
+    }
     //  console.log(this.data.recentPlay)
     var favor = this.data.favor;
     var isfavor = false
